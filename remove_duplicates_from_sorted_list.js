@@ -16,6 +16,7 @@ Constraints:
  *     this.next = (next===undefined ? null : next)
  * }
  */
+
 /**
  * @param {ListNode} head
  * @return {ListNode}
@@ -33,7 +34,15 @@ const deleteDuplicates = function(head) {
     const uniqueArray = [...new Set(workingArray)];
 
     // Return to a ListNode:
-
+    let newHead = uniqueArray.reverse().reduce((node, val) => {
+        if (node == null) {
+            node = new ListNode(val);
+        } else {
+            node = new ListNode(val, node);
+        }
+        return node;
+    }, null);
+    return newHead;
 };
 
 function ListNode(val, next) {
