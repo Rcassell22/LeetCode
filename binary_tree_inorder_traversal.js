@@ -13,7 +13,7 @@
 const inorderTraversal = function (root) {
     // return iterableInorderTraversal(root);
 
-    levels = [];
+    let levels = [];
     recursiveInorderTraversal(root, levels);
     return levels;
 };
