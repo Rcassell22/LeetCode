@@ -11,8 +11,6 @@
  * @return {number[]}
  */
 const inorderTraversal = function (root) {
-    // return iterableInorderTraversal(root);
-
     let levels = [];
     recursiveInorderTraversal(root, levels);
     return levels;
