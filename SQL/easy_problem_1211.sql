@@ -36,6 +36,8 @@ insert into Queries (query_name, result, position, rating) values ('Cat', 'Siame
 insert into Queries (query_name, result, position, rating) values ('Cat', 'Sphynx', 7, 4);
 
 -- Query:
+-- This was the only solution I got working. I even tried some other peoples solutions and they were giving incorrect results.
+-- I'm sure there's a better way to do this, I'll revist this another time.
 WITH query_cte AS (
     SELECT q.query_name, count(q.query_name) as total, (SUM((CAST(q.rating AS DECIMAL) / CAST(q.position AS DECIMAL))) / count(q.query_name)) as div_result
     FROM Queries q
@@ -44,19 +46,7 @@ SELECT DISTINCT q.query_name, ROUND(qa.div_result, 2) AS quality, ROUND(qb.perce
 FROM Queries q
 INNER JOIN query_cte qa ON q.query_name = qa.query_name
 INNER JOIN (
-    SELECT q.query_name, CAST(
-            CASE WHEN q.rating < 3 THEN q.rating ELSE 0 END AS DECIMAL
-        ) / CAST(qa.total AS DECIMAL) * 100 AS percent
+    SELECT q.query_name, ROUND(SUM(CASE WHEN q.rating < 3 THEN 1 ELSE 0 END) * 100 / COUNT(*), 2) AS percent
     FROM Queries q
-    INNER JOIN query_cte qa ON q.query_name = qa.query_name) qb ON q.query_name = qb.query_name;
-
--- quality, unrounded
-SELECT q.query_name, (SUM((CAST(q.rating AS FLOAT) / CAST(q.position AS FLOAT))) / count(q.query_name)) as div_result
-FROM Queries q
-GROUP BY q.query_name;
-
--- poor query percentage
-SELECT q.query_name, CAST(q.rating AS DECIMAL) / CAST(count(q.rating) AS DECIMAL) * 100 AS percent
-FROM Queries q
-WHERE q.rating < 3
-GROUP BY q.query_name, q.rating;
+    INNER JOIN query_cte qa ON q.query_name = qa.query_name
+    GROUP BY q.query_name) qb ON q.query_name = qb.query_name;
