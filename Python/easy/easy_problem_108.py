@@ -4,7 +4,7 @@ from util.data_classes import TreeNode
 
 
 
-class EasyProblem108:
+class Solution:
     from util.data_classes import TreeNode
     '''
     Given an integer array nums where the elements are sorted in ascending order, convert it to a
@@ -18,18 +18,18 @@ class EasyProblem108:
             return TreeNode(nums[0])
         root = TreeNode(nums[len(nums) / 2])
         # split the array, one half on one side, one half on the other
-        root.left = EasyProblem108.sorted_array_to_bst(nums[:len(nums) / 2])
-        root.right = EasyProblem108.sorted_array_to_bst(nums[(len(nums) / 2) + 1:])
+        root.left = Solution.sorted_array_to_bst(nums[:len(nums) / 2])
+        root.right = Solution.sorted_array_to_bst(nums[(len(nums) / 2) + 1:])
         return root
 
 
 
 def main():
     test_nums_1 = [-10,-3,0,5,9]
-    print('Test Case 1: ', EasyProblem108.sorted_array_to_bst(test_nums_1))
+    print('Test Case 1: ', Solution.sorted_array_to_bst(test_nums_1))
 
     test_nums_2 = [1,3]
-    print('Test Case 1: ', EasyProblem108.sorted_array_to_bst(test_nums_2))
+    print('Test Case 1: ', Solution.sorted_array_to_bst(test_nums_2))
 
 if __name__ == "__main__":
     main()
