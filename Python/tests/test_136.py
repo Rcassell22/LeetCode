@@ -1,8 +1,6 @@
-import sys
 import unittest
-sys.path.append('../')
 
-from easy.easy_problem_136 import Solution
+from Python.easy.easy_problem_136 import Solution
 
 class TestSingleNumber(unittest.TestCase):
 

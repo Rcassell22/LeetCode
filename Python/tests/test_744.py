@@ -1,4 +1,3 @@
-import sys
 import unittest
 
 from Python.easy.easy_problem_744 import Solution

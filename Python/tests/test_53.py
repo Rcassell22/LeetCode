@@ -9,14 +9,14 @@ class TestMaxSubArray(unittest.TestCase):
         expected_result = 6
 
         result = Solution().max_sub_array(test_nums)
-        self.assertEquals(result, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_case_2(self):
         test_nums = [1]
         expected_result = 1
 
         result = Solution().max_sub_array(test_nums)
-        self.assertEquals(result, expected_result)
+        self.assertEqual(result, expected_result)
 
 
     def test_case_3(self):
@@ -24,7 +24,7 @@ class TestMaxSubArray(unittest.TestCase):
         expected_result = 23
 
         result = Solution().max_sub_array(test_nums)
-        self.assertEquals(result, expected_result)
+        self.assertEqual(result, expected_result)
 
 if __name__ == '__main__':
     unittest.main()

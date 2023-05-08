@@ -13,7 +13,7 @@ class TestDiagonalSum(unittest.TestCase):
 
         result = Solution().diagonal_sum(test_mat)
 
-        self.assertEquals(result, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_case_2(self):
         test_mat = [[1,1,1,1],
@@ -25,7 +25,7 @@ class TestDiagonalSum(unittest.TestCase):
 
         result = Solution().diagonal_sum(test_mat)
 
-        self.assertEquals(result, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_case_3(self):
         test_mat = [[5]]
@@ -34,7 +34,7 @@ class TestDiagonalSum(unittest.TestCase):
 
         result = Solution().diagonal_sum(test_mat)
 
-        self.assertEquals(result, expected_result)
+        self.assertEqual(result, expected_result)
 
 if __name__ == '__main__':
     unittest.main()

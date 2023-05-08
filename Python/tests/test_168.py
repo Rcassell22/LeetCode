@@ -1,8 +1,7 @@
 import sys
 import unittest
-#sys.path.append('../')
 
-from easy.easy_problem_168 import Solution
+from Python.easy.easy_problem_168 import Solution
 
 class TestConvertToTitle(unittest.TestCase):
 

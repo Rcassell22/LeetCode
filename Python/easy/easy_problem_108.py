@@ -1,8 +1,5 @@
-
 from typing import List, Optional
-from util.data_classes import TreeNode
-
-
+from Python.util.data_classes import TreeNode
 
 class Solution:
     from util.data_classes import TreeNode
@@ -22,14 +19,3 @@ class Solution:
         root.right = Solution.sorted_array_to_bst(nums[(len(nums) / 2) + 1:])
         return root
 
-
-
-def main():
-    test_nums_1 = [-10,-3,0,5,9]
-    print('Test Case 1: ', Solution.sorted_array_to_bst(test_nums_1))
-
-    test_nums_2 = [1,3]
-    print('Test Case 1: ', Solution.sorted_array_to_bst(test_nums_2))
-
-if __name__ == "__main__":
-    main()

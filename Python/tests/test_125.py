@@ -1,10 +1,6 @@
-
-import sys
 import unittest
-sys.path.append('../')
 
-
-from easy.easy_problem_125 import Solution
+from Python.easy.easy_problem_125 import Solution
 
 class TestValidPalindrome(unittest.TestCase):
 
