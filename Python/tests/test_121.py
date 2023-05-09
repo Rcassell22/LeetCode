@@ -2,7 +2,7 @@ import unittest
 
 from Python.easy.easy_problem_121 import Solution
 
-class TestIntersect(unittest.TestCase):
+class TestMaxProfit(unittest.TestCase):
 
     def test_case_1(self):
         test_prices = [7,1,5,3,6,4]
