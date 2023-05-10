@@ -2,7 +2,7 @@ import unittest
 
 from Python.medium.medium_problem_59 import Solution
 
-class TestIntersect(unittest.TestCase):
+class TestGenerateMatrix(unittest.TestCase):
 
     def test_case_1(self):
         test_n = 3
