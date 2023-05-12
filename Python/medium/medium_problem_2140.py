@@ -8,7 +8,7 @@ class Solution(object):
     This one was hard. Not only did I not solve it in the time limit on my own, but
     I had to spend about 2 hours writing prompts to get GPT to solve it correctly.
     What it seemed to have the hardest time with was the concept of brainpower. Once I
-    did a better job of explaining that, it gave me an answer that worked, but was two slow.
+    did a better job of explaining that, it gave me an answer that worked, but was too slow.
     After that, I kept asking it to make it faster, and eventually it just kept giving me the same
     solution. So I asked it to use recursion AND dynamic programming, which strangely it didn't do,
     BUT it came up with a solution that was fast and actually worked. At the bottom of this file
