@@ -2,7 +2,7 @@ import unittest
 
 from Python.medium.medium_problem_1035 import Solution
 
-class TestSearchMatrix(unittest.TestCase):
+class TestMaxUncrossedLines(unittest.TestCase):
 
     def test_case_1(self):
         test_nums1 = [1,4,2]
